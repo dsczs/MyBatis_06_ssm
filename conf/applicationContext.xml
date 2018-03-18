@@ -17,6 +17,7 @@
 
     <!-- 引入数据库的配置文件 -->
     <context:property-placeholder location="classpath:dbconfig.properties"/>
+
     <!-- Spring用来控制业务逻辑。数据源、事务控制、aop -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="jdbcUrl" value="${jdbc.url}"></property>
@@ -24,6 +25,7 @@
         <property name="user" value="${jdbc.username}"></property>
         <property name="password" value="${jdbc.password}"></property>
     </bean>
+
     <!-- spring事务管理 -->
     <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
